@@ -1,0 +1,67 @@
+:root {
+  /* surfaces */
+  --bg-page: #1F1F1F;
+  --bg-raised: #2C2C2C;
+  --bg-sunken: #2C2C2C;
+
+  /* ink */
+  --ink-body: #DADAD7;
+  --ink-strong: #F4F4F2;
+  --ink-muted: #9A9A96;
+
+  /* title */
+  --title: #F4F4F2;
+
+  /* brand */
+  --brand-indigo: #292A87;
+
+  /* accent */
+  --accent: #E96D26;
+  --accent-text: #E96D26;
+  --accent-deep: #E96D26;
+  --on-accent: #1F1F1F;
+
+  /* lines */
+  --rule: #383838;
+  --border-control: #383838;
+  --focus: #E96D26;
+
+  /* radii */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.3);
+  --shadow-lift: 0 18px 40px rgba(0, 0, 0, 0.4);
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+
+  /* line-length caps */
+  --measure-narrow: 46ch;
+  --measure-default: 62ch;
+  --measure-wide: 76ch;
+
+  /* typography */
+  --font-display: "Archivo Black", "Archivo", system-ui, sans-serif;
+  --font-sans: "Archivo", system-ui, sans-serif;
+}
+
+p {
+  max-width: var(--measure-default);
+  font-weight: 400;
+  text-align: left;
+}

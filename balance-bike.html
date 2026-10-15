@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balance Bike | Alfie Brown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="theme-tokens.css">
+  <link rel="stylesheet" href="site-header.css">
+  <link rel="stylesheet" href="project-story-v2.css">
+  <style>
+    /* TODO: confirm Quwela DEMO licence (Ragamkata Studio) allows web use before publishing */
+    @font-face {
+      font-family: "Quwela";
+      src: url("assets/fonts/quwela-demo-regular.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+  </style>
+</head>
+<body class="bike-project has-site-header">
+  <header class="site-header">
+    <a class="site-header-brand" href="index.html" aria-label="Back to home">
+      <img class="site-header-logo" src="assets/logos/a-logo.svg" alt="Alfie Brown logo">
+      <span>Alfie Brown</span>
+    </a>
+    <nav class="site-header-nav" aria-label="Portfolio navigation">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="capy-page" id="top">
+    <section class="capy-hero" aria-labelledby="project-title">
+      <div class="capy-copy">
+        <a class="capy-back" href="index.html#work" aria-label="Back to portfolio">&larr;</a>
+        <h1 class="capy-title" id="project-title">BALANCE BIKE</h1>
+        <p>A Design for Manufacture group project in which we took apart a Janod Bikloon balance bike, analysed how it was made, and designed our own version with 35 parts instead of 60.</p>
+      </div>
+      <img class="capy-image capy-hero-image" src="assets/images/balance-bike/general/render-6.webp" alt="Balance Bike main render">
+    </section>
+
+    <section class="capy-description" aria-label="Project brief">
+      <h2 class="capy-subtitle">The Brief</h2>
+      <p>We were given a children's balance bike for ages two to five and asked to find out which components, materials and processes had been used to make it. We then designed our own balance bike that applies what we learned, with a target retail price of £35 and 304.8mm wheels.</p>
+    </section>
+
+    <section class="capy-showcase" aria-label="Balance bike design variations">
+      <img class="capy-image" src="assets/images/balance-bike/general/render-1.webp" alt="Balance Bike render one">
+      <img class="capy-image" src="assets/images/balance-bike/general/render-2.webp" alt="Balance Bike render two">
+    </section>
+
+    <section class="capy-description" aria-label="Analysis of the original bike">
+      <h2 class="capy-subtitle">Analysing the Original</h2>
+      <p>The original bike has 60 parts, 12 of them unique and 18 standard. Using the Lucas Hull method, which puts each part through a series of questions to justify whether it is needed, we scored it at 59% efficiency. Most of the non-essential parts were screws and fixings in the fork. The seat was the least efficient sub-assembly, with eight separate parts including 30 staples placed by hand. The wheel was the most efficient, with no spokes, screws or fixings.</p>
+      <p>The bike also uses five different plywood thicknesses and six screw lengths. The two holes at the base of the fork turned out to hold the plywood during CNC machining rather than serve any purpose on the finished bike. Packing the boxes into a 40ft container also wastes about 13.84% of the available space.</p>
+    </section>
+
+    <section class="capy-showcase" aria-label="Balance bike additional renders">
+      <img class="capy-image" src="assets/images/balance-bike/general/render-3.webp" alt="Balance Bike render three">
+      <img class="capy-image" src="assets/images/balance-bike/general/render-4.webp" alt="Balance Bike render four">
+    </section>
+
+    <section class="capy-description" aria-label="Our redesign">
+      <h2 class="capy-subtitle">The Redesign</h2>
+      <p>Our bike uses 35 parts, 19 of them standard. The seat is now a steam-bent birch plywood piece, with the foam, leather cover and staples removed. The steering pin is already fitted in the fork, so the only tool needed to build it is the supplied Allen key.</p>
+      <p>The wheels use 19mm ball bearings to reduce friction and roll smoothly, with a slightly thicker axle to carry the load. Steering is limited to 40° either side of centre, set with a SolidWorks sketch, to prevent the bike from jack-knifing. The frame uses two plywood thicknesses, 12mm and 30mm, instead of five.</p>
+    </section>
+
+    <section class="capy-showcase" aria-label="Balance bike final perspectives">
+      <img class="capy-image" src="assets/images/balance-bike/general/render-5.webp" alt="Balance Bike render five">
+      <img class="capy-image" src="assets/images/balance-bike/general/render-9-camera.webp" alt="Balance Bike camera render nine" style="object-position: center 90%">
+    </section>
+
+    <section class="capy-description" aria-label="Designing for manufacture">
+      <h2 class="capy-subtitle">Designing for Manufacture</h2>
+      <p>The wheel rims and axle holders are injection moulded from high-impact polystyrene. We avoided undercuts, gave the ribs 3° draft angles so they release from the mould, and kept the 5mm wall thickness within the 6.35mm limit for the material. The tyres are EVA foam, which does not puncture.</p>
+      <p>The fork is CNC machined from birch plywood with no undercuts and a consistent wall thickness, and its fillets allow faster feed rates. A simulation of the frame under a 30kg load, above the 26kg rated maximum, showed a maximum deflection of 0.75mm.</p>
+    </section>
+
+    <section class="capy-endnote" aria-label="Group and reflection">
+      <p>Group: Alfie Brown, Nolan Ford, Yilong Wang, Mattie Waring and David Wiederstein. My sections covered function, packaging, sub-assemblies, main assembly, order of assembly, volume and transport costs, efficiency, and the flaws and improvements.</p>
+      <p>The main lesson was that in design you cannot always make the most aesthetically pleasing or functional solution. Sometimes a cheaper alternative must be used, and the project taught me to adapt processes I would otherwise have resisted.</p>
+    </section>
+
+    <footer class="capy-footer">
+      <div class="capy-footer-top">
+        <a href="#top">Back to top</a>
+        <nav class="capy-footer-nav" aria-label="Project navigation">
+          <a href="captured.html">Previous Project</a>
+          <span aria-hidden="true">|</span>
+          <a href="the-bubble.html">Next Project</a>
+        </nav>
+      </div>
+      <div class="capy-footer-bottom">
+        <div class="capy-footer-left">
+          <span>Alfie Brown · Brighton</span>
+        </div>
+        <div class="capy-footer-right">
+          <a href="mailto:alfiebdesign@gmail.com">alfiebdesign@gmail.com</a>
+          <span>© 2026 ALFIE BROWN</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script src="site-header.js"></script>
+</body>
+</html>
