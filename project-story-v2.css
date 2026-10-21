@@ -15,7 +15,7 @@ body {
   margin: 0;
   background: var(--capy-bg);
   color: var(--capy-ink);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-sans);
 }
 
 a { color: inherit; text-decoration: none; }
@@ -85,11 +85,11 @@ a { color: inherit; text-decoration: none; }
 .capy-description p,
 .capy-endnote p {
   margin: 0;
-  max-width: none;
+  max-width: 68ch;
   color: var(--capy-muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
   width: 100%;
 }
 
@@ -249,7 +249,7 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   justify-items: center;
 }
 .montgomery-project .capy-logo-row img {
-  width: min(100%, 440px);
+  width: min(100%, 760px);
   max-height: none;
 }
 .montgomery-project .capy-footer-top {
@@ -487,7 +487,7 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   }
 
   .capy-title { font-size: clamp(2.7rem, 12vw, 4rem); }
-  .capy-copy p, .capy-description p, .capy-endnote p { font-size: 0.82rem; }
+  .capy-copy p, .capy-description p, .capy-endnote p { font-size: 1rem; }
   .capy-hero-image { grid-row: 1; }
   .capy-back { margin-bottom: 10px; }
   .capy-showcase { gap: 16px; }
@@ -559,8 +559,8 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
 .capy-facts dd {
   margin: 4px 0 0;
   color: var(--capy-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 500;
   line-height: 1.4;
 }
 
@@ -640,9 +640,10 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   margin: 14px 0 0;
   padding-left: 1.2em;
   color: var(--capy-muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.5;
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .capy-list li + li { margin-top: 6px; }
@@ -652,9 +653,28 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   .capy-sketches { grid-template-columns: minmax(0, 1fr); }
   .capy-sketches img { aspect-ratio: auto; max-height: 420px; }
   .capy-figure img { border-radius: 18px; }
-  .capy-list { font-size: 0.82rem; }
+  .capy-list { font-size: 1rem; }
   .capy-table { font-size: 0.74rem; }
 }
 
 .capy-sketches--auto img { aspect-ratio: auto; }
 .capy-sketches--photos img { object-fit: cover; }
+
+/* Small labels keep the mono face; reading text is Archivo */
+.capy-facts dt,
+.capy-table caption,
+.capy-figure figcaption,
+.capy-footer,
+.capy-back {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* Sketches on white paper: the image is the tile, no inner frame */
+.capy-sketches--plain img {
+  aspect-ratio: 0.85;
+  object-fit: contain;
+  background: #FFFFFF;
+}
+@media (max-width: 700px) {
+  .capy-sketches--plain img { aspect-ratio: auto; max-height: none; }
+}
