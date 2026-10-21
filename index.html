@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alfie Brown — Packaging, Print &amp; Product Designer</title>
+  <link rel="icon" href="/assets/logos/a-logo.svg" type="image/svg+xml">
   <meta name="description" content="Alfie Brown is a Brighton-based product design student at the University of Sussex, working across packaging, print and physical product.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Alfie Brown — Packaging, Print &amp; Product Designer">
@@ -800,6 +801,15 @@
       display: none;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
     .hidden-control {
       display: none;
     }
@@ -843,7 +853,7 @@
     <main>
       <section class="hero" aria-label="Introduction">
         <div class="hero__layout">
-          <img class="hero__word" src="assets/logos/portfolio-word.svg" alt="Portfolio, 2026" fetchpriority="high">
+          <img class="hero__word" src="assets/logos/portfolio-word.webp" width="1200" height="789" alt="Portfolio, 2026" fetchpriority="high">
           <div class="hero__about" id="about">
             <h1>Hi, I&rsquo;m Alfie</h1>
             <p>I like objects that carry a story. My influences are the florals of the Arts and Crafts movement, brutalist posters and Asian postage stamps, and a lot of my work comes back to the Isle of Sheppey, where I grew up. I'm now in Brighton, studying a BSc in Product Design at the University of Sussex, and working across packaging, print and physical product.</p>
@@ -853,7 +863,8 @@
         <a class="hero__scroll" href="#work" aria-label="Scroll to selected work"><img src="assets/images/general/arrow-jump-down-lottie.svg" alt=""></a>
       </section>
 
-      <section class="projects" id="work">
+      <section class="projects" id="work" aria-labelledby="work-title">
+        <h2 class="visually-hidden" id="work-title">Selected work</h2>
         <div class="project-list" id="project-list">
           <article class="project-item">
             <div class="project-thumb alt-3"><img src="assets/images/the-montgomery/general/open-corner-13-05-26.webp" width="1920" height="1080" class="is-contain" alt="Montgomery watch box opened to reveal the cork-lined interior" loading="lazy"></div>
@@ -883,11 +894,11 @@
             </div>
           </article>
           <article class="project-item">
-            <div class="project-thumb alt-6"><img src="assets/images/captured/general/captured-render.webp" width="4500" height="3000" alt="Captured poster with a photograph of Sheerness inside the letters" loading="lazy"></div>
+            <div class="project-thumb alt-8"><img src="assets/images/strut-controller/general/strut-thumb.webp" width="1086" height="768" alt="STRUT Controller game controller render" loading="lazy"></div>
             <div class="project-meta">
-              <p class="project-tag">Personal project</p>
-              <h3><a href="captured">Captured</a></h3>
-              <p class="project-desc">A poster made while waiting for a secondhand Fujifilm camera to arrive, about feeling stuck in your home town. The photograph inside the letters is Sheerness.</p>
+              <p class="project-tag">Final year project · In progress</p>
+              <h3><a href="strut-controller">STRUT Controller</a></h3>
+              <p class="project-desc">Game console controllers are made to be discarded. This project designs a controller whose sticks, battery and shell can be replaced so it can be repaired instead.</p>
             </div>
           </article>
           <article class="project-item hidden-project">
@@ -907,11 +918,11 @@
             </div>
           </article>
           <article class="project-item hidden-project">
-            <div class="project-thumb alt-8"><img src="assets/images/strut-controller/general/strut-thumb.webp" width="1086" height="768" alt="STRUT Controller game controller render" loading="lazy"></div>
+            <div class="project-thumb alt-6"><img src="assets/images/captured/general/captured-render.webp" width="1400" height="934" alt="Captured poster with a photograph of Sheerness inside the letters" loading="lazy"></div>
             <div class="project-meta">
-              <p class="project-tag">Final year project · In progress</p>
-              <h3><a href="strut-controller">STRUT Controller</a></h3>
-              <p class="project-desc">Game console controllers are made to be discarded. This project designs a controller whose sticks, battery and shell can be replaced so it can be repaired instead.</p>
+              <p class="project-tag">Personal project</p>
+              <h3><a href="captured">Captured</a></h3>
+              <p class="project-desc">A poster made while waiting for a secondhand Fujifilm camera to arrive, about feeling stuck in your home town. The photograph inside the letters is Sheerness.</p>
             </div>
           </article>
           <article class="project-item hidden-project">
