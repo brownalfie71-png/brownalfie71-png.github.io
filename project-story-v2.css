@@ -655,3 +655,6 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   .capy-list { font-size: 0.82rem; }
   .capy-table { font-size: 0.74rem; }
 }
+
+.capy-sketches--auto img { aspect-ratio: auto; }
+.capy-sketches--photos img { object-fit: cover; }
