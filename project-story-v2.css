@@ -85,7 +85,7 @@ a { color: inherit; text-decoration: none; }
 .capy-description p,
 .capy-endnote p {
   margin: 0;
-  max-width: 68ch;
+  max-width: none;
   color: var(--capy-muted);
   font-size: 1.0625rem;
   font-weight: 400;
@@ -640,7 +640,7 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   margin: 14px 0 0;
   padding-left: 1.2em;
   color: var(--capy-muted);
-  max-width: 68ch;
+  max-width: none;
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.65;
