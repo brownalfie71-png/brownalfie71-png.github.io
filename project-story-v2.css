@@ -377,7 +377,7 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
   color: #1F1F1F;
 }
 
-.tea-project .capy-card h2 {
+.tea-project .capy-card h3 {
   margin: 0;
   font-size: clamp(0.9rem, 1.65vw, 1.2rem);
   font-weight: 900;
@@ -678,3 +678,50 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
 @media (max-width: 700px) {
   .capy-sketches--plain img { aspect-ratio: auto; max-height: none; }
 }
+
+/* Previous / next project links at the top of each project page */
+.capy-project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 clamp(24px, 4vh, 40px);
+}
+
+.capy-project-nav-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0 16px;
+  border: 1px solid rgba(218, 218, 215, 0.25);
+  border-radius: 999px;
+  color: var(--capy-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.capy-project-nav-link:hover,
+.capy-project-nav-link:focus-visible {
+  border-color: var(--capy-orange);
+  color: var(--capy-orange);
+}
+
+.capy-project-nav-link:focus-visible {
+  outline: 2px solid var(--capy-orange);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The footer is set in caps; the name keeps its normal case */
+.capy-footer .footer-name { text-transform: none; }
