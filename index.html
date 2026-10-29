@@ -557,121 +557,42 @@
       color: var(--accent-text);
     }
 
-    .contact-dialog {
-      width: min(480px, calc(100vw - 32px));
-      margin: auto;
-      padding: 32px;
-      border: 1px solid var(--rule);
-      border-radius: var(--radius-md);
-      background: var(--bg-page);
-      color: var(--ink-body);
-    }
-
-    .contact-dialog::backdrop {
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .contact-dialog h2 {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .contact-dialog > p {
-      margin: 0 0 24px;
-      color: var(--ink-muted);
-      font-size: 0.95rem;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 16px;
-    }
-
-    .contact-form label {
-      display: grid;
-      gap: 6px;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--border-control);
-      border-radius: var(--radius-sm);
-      background: var(--bg-raised);
-      color: var(--ink-strong);
-      font: inherit;
-      letter-spacing: normal;
-      text-transform: none;
-    }
-
-    .contact-form textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: 2px solid var(--focus);
-      outline-offset: 2px;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
-    }
-
-    .contact-actions button {
+    .copy-email {
+      display: inline-flex;
       min-height: 48px;
+      align-items: center;
+      justify-content: center;
       padding: 0 22px;
+      border: 1px solid var(--ink-muted);
       border-radius: var(--radius-md);
-      font: inherit;
+      background: transparent;
+      color: var(--ink-strong);
+      font-family: inherit;
       font-size: 1rem;
       font-weight: 500;
+      white-space: nowrap;
       cursor: pointer;
     }
 
-    .contact-send {
-      border: 1px solid var(--accent-deep);
-      background: var(--accent-deep);
-      color: var(--on-accent);
+    .copy-email:hover,
+    .copy-email:focus-visible {
+      border-color: var(--ink-strong);
     }
 
-    .contact-send:hover,
-    .contact-send:focus-visible {
-      background: var(--ink-strong);
-    }
-
-    .contact-send:disabled {
-      opacity: 0.6;
-      cursor: wait;
-    }
-
-    .contact-cancel {
-      border: 1px solid var(--border-control);
-      background: transparent;
-      color: var(--ink-body);
-    }
-
-    .contact-cancel:hover,
-    .contact-cancel:focus-visible {
-      border-color: var(--ink-body);
+    .about-email-link:focus-visible,
+    .copy-email:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
     }
 
     .contact-status {
+      flex-basis: 100%;
       min-height: 1.5em;
+      max-width: none;
       margin: 0;
       color: var(--ink-muted);
       font-size: 0.95rem;
+      text-align: right;
     }
 
     .instagram-link,
@@ -739,6 +660,14 @@
 
       .contact-links {
         justify-content: flex-start;
+      }
+
+      .contact-status {
+        text-align: left;
+      }
+
+      .contact-links .cv-link {
+        padding: 0;
       }
     }
 
@@ -940,26 +869,13 @@
           <p>Open to graduate product design roles, freelance packaging and print work, and anything involving objects you can hold.</p>
         </div>
         <div class="contact-links">
-          <button class="about-email-link" type="button" aria-haspopup="dialog" aria-controls="contact-dialog">Email me</button>
+          <a class="about-email-link" href="mailto:alfiebdesign@gmail.com?subject=Portfolio%20enquiry">Email me</a>
+          <button class="copy-email" type="button" data-email="alfiebdesign@gmail.com">Copy address</button>
           <a class="cv-link" href="assets/files/alfie-brown-cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+          <p class="contact-status" role="status" aria-live="polite"></p>
         </div>
       </section>
 
-      <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title">
-        <h2 id="contact-dialog-title">Say hi back :)</h2>
-        <p>I'll get back to you as soon as I can.</p>
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/moejkbpr" method="POST">
-          <input type="hidden" name="_subject" value="Portfolio message">
-          <label>Name<input type="text" name="name" autocomplete="name" required></label>
-          <label>Email<input type="email" name="email" autocomplete="email" required></label>
-          <label>Message<textarea name="message" required></textarea></label>
-          <div class="contact-actions">
-            <button class="contact-cancel" type="button">Cancel</button>
-            <button class="contact-send" type="submit">Send</button>
-          </div>
-          <p class="contact-status" role="status" aria-live="polite"></p>
-        </form>
-      </dialog>
     </main>
 
     <footer class="site-footer">
@@ -1032,37 +948,38 @@
       seeMoreButton.focus({ preventScroll: true });
     });
 
-    const emailDialog = document.getElementById('contact-dialog');
-    const emailForm = document.getElementById('contact-form');
-    const emailStatus = emailForm.querySelector('.contact-status');
-    const emailSubmit = emailForm.querySelector('.contact-send');
+    const copyButton = document.querySelector('.copy-email');
+    const copyStatus = document.querySelector('.contact-status');
+    let copyStatusTimer;
 
-    document.querySelector('.about-email-link').addEventListener('click', () => {
-      emailStatus.textContent = '';
-      emailDialog.showModal();
-      emailForm.elements.name.focus();
-    });
-
-    emailForm.querySelector('.contact-cancel').addEventListener('click', () => emailDialog.close());
-
-    emailForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      emailSubmit.disabled = true;
-      emailStatus.textContent = 'Sending...';
+    const copyText = async (text) => {
       try {
-        const response = await fetch(emailForm.action, {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: new FormData(emailForm)
-        });
-        if (!response.ok) throw new Error(`Formspree responded with ${response.status}`);
-        emailForm.reset();
-        emailStatus.textContent = 'Talk soon';
+        await navigator.clipboard.writeText(text);
       } catch (error) {
-        emailStatus.textContent = 'Sorry, the message could not be sent. Please try again or email alfiebdesign@gmail.com directly.';
-      } finally {
-        emailSubmit.disabled = false;
+        // Fallback for browsers without the async clipboard API
+        const field = document.createElement('textarea');
+        field.value = text;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if (!copied) throw error;
       }
+    };
+
+    copyButton.addEventListener('click', async () => {
+      const address = copyButton.dataset.email;
+      try {
+        await copyText(address);
+        copyStatus.textContent = `Copied ${address}`;
+      } catch (error) {
+        copyStatus.textContent = `Couldn't copy it automatically. The address is ${address}`;
+      }
+      clearTimeout(copyStatusTimer);
+      copyStatusTimer = setTimeout(() => { copyStatus.textContent = ''; }, 8000);
     });
   </script>
 </body>
