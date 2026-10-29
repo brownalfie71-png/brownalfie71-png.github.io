@@ -89,5 +89,5 @@ body.has-site-header { padding-top: 80px; }
   body.has-site-header { padding-top: 64px; }
 }
 /* The link for the page you're on */
-.site-header-nav a[aria-current="page"],
-.site-header-menu-links a[aria-current="page"] { color: var(--accent-text); }
+.site-header-nav a[aria-current],
+.site-header-menu-links a[aria-current] { color: var(--accent-text); }
