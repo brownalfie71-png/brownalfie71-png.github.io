@@ -20,7 +20,7 @@
   }
 
   header.className = 'site-header';
-  header.innerHTML = `<a class="site-header-brand" href="/" aria-label="Back to home"><img class="site-header-logo" src="assets/logos/a-logo.svg" alt="Alfie Brown logo"><span>Alfie Brown</span></a><nav class="site-header-nav" aria-label="Portfolio navigation"><a href="${aboutHref}">About</a><a href="/#work">Work</a><a href="${contactHref}">Contact</a></nav><button class="site-header-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel"><span></span><span></span><span></span></button>`;
+  header.innerHTML = `<a class="site-header-brand" href="/" aria-label="Back to home"><img class="site-header-logo" src="assets/logos/a-logo.svg" alt="Alfie Brown logo"><span>Alfie Brown</span></a><nav class="site-header-nav" aria-label="Portfolio navigation"><a href="${aboutHref}">About</a><a href="/blog/">Blog</a><a href="/#work">Work</a><a href="${contactHref}">Contact</a></nav><button class="site-header-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel"><span></span><span></span><span></span></button>`;
 
   let panel = document.querySelector('.site-header-menu-panel');
   if (!panel) {
@@ -28,7 +28,7 @@
     panel.className = 'site-header-menu-panel';
     panel.id = 'menu-panel';
     panel.setAttribute('aria-hidden', 'true');
-    panel.innerHTML = `<nav class="site-header-menu-links" aria-label="Mobile navigation"><a href="${aboutHref}">About</a><a href="/#work">Work</a><a href="${contactHref}">Contact</a></nav>`;
+    panel.innerHTML = `<nav class="site-header-menu-links" aria-label="Mobile navigation"><a href="${aboutHref}">About</a><a href="/blog/">Blog</a><a href="/#work">Work</a><a href="${contactHref}">Contact</a></nav>`;
     document.body.prepend(panel);
   }
 
