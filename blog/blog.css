@@ -397,6 +397,25 @@ a { color: inherit; text-decoration: none; }
 
 .post-section + .post-section { margin-top: 72px; }
 
+/* Photo at the top of a post. Shown no wider than the file itself so it stays sharp. */
+.post-figure { margin: 0 0 56px; }
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 28px;
+}
+
+.post-figure figcaption {
+  margin-top: 10px;
+  color: var(--ink-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
 .post-section .post-eyebrow {
   margin-bottom: 8px;
   color: var(--ink-muted);
