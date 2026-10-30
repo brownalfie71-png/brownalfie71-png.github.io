@@ -33,6 +33,9 @@
   }
 
   document.body.classList.add('has-site-header');
+  const syncScrolled = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', syncScrolled, { passive: true });
+  syncScrolled();
   const toggle = document.querySelector('.site-header-menu-toggle');
   if (!toggle || !panel) return;
 

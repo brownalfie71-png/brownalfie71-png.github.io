@@ -91,3 +91,7 @@ body.has-site-header { padding-top: 80px; }
 /* The link for the page you're on */
 .site-header-nav a[aria-current],
 .site-header-menu-links a[aria-current] { color: var(--accent-text); }
+
+/* Thin white line under the header while you're at the top of the page;
+   once you scroll it drops back to the subtle grey rule */
+.site-header:not(.is-scrolled) { border-bottom-color: rgba(244, 244, 242, 0.7); }
