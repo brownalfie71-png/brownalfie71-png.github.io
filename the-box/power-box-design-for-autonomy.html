@@ -81,10 +81,29 @@
         </section>
       </article>
 
-      <section class="post-comments" id="comments" aria-labelledby="comments-title" hidden>
+      <section class="post-comments" id="comments" aria-labelledby="comments-title" data-comments-for="power-box-design-for-autonomy" hidden>
         <h2 id="comments-title">Comments</h2>
         <p class="post-comments-note">Comments appear once I've approved them.</p>
-        <div id="cusdis_thread" data-host="https://cusdis.com" data-page-id="power-box-design-for-autonomy" data-page-url="https://alfiebrowndesign.co.uk/the-box/power-box-design-for-autonomy" data-page-title="Power Box: Design for Autonomy" data-theme="dark"></div>
+
+        <ol class="comment-list"></ol>
+        <p class="comment-empty">No comments yet.</p>
+
+        <form class="comment-form" novalidate>
+          <h3>Leave a comment</h3>
+          <label>Name
+            <input name="name" type="text" maxlength="60" autocomplete="name" required>
+          </label>
+          <label>Comment
+            <textarea name="body" rows="5" maxlength="2000" required></textarea>
+          </label>
+          <label class="comment-trap" aria-hidden="true">Website
+            <input name="website" type="text" tabindex="-1" autocomplete="off">
+          </label>
+          <div class="comment-actions">
+            <button type="submit">Post comment</button>
+            <p class="comment-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </section>
 
       <nav class="post-end" aria-label="Post navigation">
