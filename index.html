@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="theme-tokens.css">
   <link rel="stylesheet" href="site-header.css">
+  <link rel="stylesheet" href="site-footer.css">
   <style>
     /* TODO: confirm Quwela DEMO licence (Ragamkata Studio) allows web use before publishing */
     @font-face {
@@ -595,58 +596,6 @@
       text-align: right;
     }
 
-    .instagram-link,
-    .linkedin-link {
-      display: inline-flex;
-      padding: 0.5rem;
-      color: var(--ink);
-      transition: color 0.25s ease;
-    }
-
-    .behance-link {
-      display: inline-flex;
-      padding: 0.5rem;
-      transition: opacity 0.25s ease;
-    }
-
-    .behance-link:hover,
-    .behance-link:focus-visible {
-      opacity: 0.7;
-    }
-
-    .behance-link img {
-      width: 25px;
-      height: 25px;
-      filter: brightness(0) invert(1);
-    }
-
-    .instagram-link svg,
-    .linkedin-link svg {
-      width: 25px;
-      height: 25px;
-    }
-
-    .instagram-link .instagram-gradient {
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .instagram-link:hover .instagram-gradient,
-    .instagram-link:focus-visible .instagram-gradient {
-      opacity: 1;
-    }
-
-    .linkedin-link:hover,
-    .linkedin-link:focus-visible {
-      color: #0A66C2;
-    }
-
-    .footer-social {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
     @media (max-width: 767px) {
       .about-contact {
         flex-direction: column;
@@ -669,65 +618,6 @@
       .contact-links .cv-link {
         padding: 0;
       }
-    }
-
-    .site-footer {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      width: 100vw;
-      padding: 72px max(24px, calc((100vw - 1280px) / 2)) 48px;
-      margin: 48px 0 0 calc(50% - 50vw);
-      background: var(--brand-indigo);
-      color: var(--ink-body);
-    }
-
-    .footer-copy {
-      max-width: 560px;
-    }
-
-    .footer-copy p,
-    .footer-meta {
-      color: var(--ink-body);
-    }
-
-    .footer-meta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .footer-meta .footer-name {
-      text-transform: none;
-    }
-
-    .footer-meta .cv-link {
-      min-height: 0;
-      padding: 0 0 0 8px;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-    }
-
-    @media (max-width: 900px) {
-      .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-meta {
-        align-items: flex-start;
-      }
-    }
-
-    .footer-meta .cv-link:hover,
-    .footer-meta .cv-link:focus-visible {
-      color: var(--ink-strong);
-      text-decoration-thickness: 2px;
     }
 
     .hidden-project {
@@ -884,13 +774,13 @@
       <div class="footer-copy">
         <span>Alfie Brown · Brighton</span>
       </div>
+      <div class="footer-social">
+        <a class="instagram-link" href="https://www.instagram.com/alfiebdesign/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="instagram-gradient-fill" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#feda75"/><stop offset="0.5" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/><g class="instagram-gradient" fill="none" stroke="url(#instagram-gradient-fill)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle class="instagram-gradient" cx="17.5" cy="6.5" r="1.25" fill="url(#instagram-gradient-fill)"/></svg></a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/alfie-brown-148322386" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9h4v11H4zM6 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM10 9h3.8v1.6h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V20h-4v-4.7c0-1.12-.02-2.56-1.56-2.56-1.56 0-1.8 1.22-1.8 2.48V20h-4z"/></svg></a>
+        <a class="behance-link" href="https://www.behance.net/alfiebrown15" target="_blank" rel="noopener noreferrer" aria-label="Behance"><img src="assets/logos/behance.webp" alt="" aria-hidden="true"></a>
+        <a class="footer-cv" href="assets/files/alfie-brown-cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
       <div class="footer-meta">
-        <div class="footer-social">
-          <a class="instagram-link" href="https://www.instagram.com/alfiebdesign/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="instagram-gradient-fill" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#feda75"/><stop offset="0.5" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/><g class="instagram-gradient" fill="none" stroke="url(#instagram-gradient-fill)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle class="instagram-gradient" cx="17.5" cy="6.5" r="1.25" fill="url(#instagram-gradient-fill)"/></svg></a>
-          <a class="linkedin-link" href="https://www.linkedin.com/in/alfie-brown-148322386" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9h4v11H4zM6 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM10 9h3.8v1.6h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V20h-4v-4.7c0-1.12-.02-2.56-1.56-2.56-1.56 0-1.8 1.22-1.8 2.48V20h-4z"/></svg></a>
-          <a class="behance-link" href="https://www.behance.net/alfiebrown15" target="_blank" rel="noopener noreferrer" aria-label="Behance"><img src="assets/logos/behance.webp" alt="" aria-hidden="true"></a>
-          <a class="cv-link" href="assets/files/alfie-brown-cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-        </div>
         <a href="mailto:alfiebdesign@gmail.com">alfiebdesign@gmail.com</a>
         <span class="footer-name">© 2026 Alfie Brown</span>
       </div>

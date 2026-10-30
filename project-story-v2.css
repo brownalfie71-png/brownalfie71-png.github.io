@@ -725,3 +725,12 @@ body:not(.runit-project) .capy-footer { margin-top: 90px; }
 
 /* The footer is set in caps; the name keeps its normal case */
 .capy-footer .footer-name { text-transform: none; }
+
+/* Project pages end with the shared indigo bar, so the old bottom row's spacing goes */
+.capy-footer { padding-bottom: 0; }
+.capy-footer-top {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.montgomery-project .capy-footer .capy-page-stopper { margin: 1.5rem 0 0; }

@@ -1,0 +1,104 @@
+/* Indigo bottom bar, shared by every page:
+   name on the left, icons in the middle, email and copyright on the right */
+.site-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  width: 100vw;
+  padding: 56px max(24px, calc((100vw - 1280px) / 2));
+  margin: 64px 0 0 calc(50% - 50vw);
+  background: var(--brand-indigo);
+  color: var(--ink-body);
+  font-family: var(--font-sans);
+}
+
+.site-footer a { color: inherit; text-decoration: none; }
+
+.footer-copy { justify-self: start; }
+
+.footer-social {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.footer-meta {
+  display: flex;
+  justify-self: end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-meta .footer-name { text-transform: none; }
+
+.instagram-link,
+.linkedin-link,
+.behance-link,
+.footer-cv {
+  display: inline-flex;
+  align-items: center;
+  min-height: 41px;
+  padding: 0.5rem;
+  color: var(--ink-strong);
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.instagram-link svg,
+.linkedin-link svg,
+.behance-link img {
+  width: 25px;
+  height: 25px;
+}
+
+.behance-link img { filter: brightness(0) invert(1); }
+
+.behance-link:hover,
+.behance-link:focus-visible { opacity: 0.7; }
+
+.instagram-link .instagram-gradient {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.instagram-link:hover .instagram-gradient,
+.instagram-link:focus-visible .instagram-gradient { opacity: 1; }
+
+.linkedin-link:hover,
+.linkedin-link:focus-visible { color: #0A66C2; }
+
+/* CV: plain text, no underline, turns black on hover */
+.footer-cv {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-cv:hover,
+.footer-cv:focus-visible { color: var(--bg-page); }
+
+.site-footer a:focus-visible {
+  outline: 2px solid var(--ink-strong);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .footer-copy,
+  .footer-social,
+  .footer-meta { justify-self: center; }
+
+  .footer-meta { align-items: center; }
+}
