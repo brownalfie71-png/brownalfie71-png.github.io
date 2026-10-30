@@ -20,7 +20,7 @@ The comments table is created automatically the first time the Worker runs.
 
 ## Approving comments
 
-Go to `https://box-comments.yourname.workers.dev/admin` and enter your admin key.
+Go to `https://box-comments.brownalfie71.workers.dev/admin` and enter your admin key.
 Approve shows a comment on the site. Hide takes it down again. Delete removes it for good.
 
 ## Optional: phone notifications

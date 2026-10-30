@@ -8,7 +8,7 @@
 
   // The Cloudflare Worker's address, e.g. 'https://box-comments.yourname.workers.dev'.
   // Until it's set, the comment section stays hidden and comment counts show 0.
-  const COMMENTS_API = '';
+  const COMMENTS_API = 'https://box-comments.brownalfie71.workers.dev';
 
   const formatNumber = (n) => Number(n).toLocaleString('en-GB');
   const show = (selector, value) => {
