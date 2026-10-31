@@ -96,7 +96,19 @@ body.has-site-header { padding-top: 80px; }
    once you scroll it drops back to the subtle grey rule */
 .box-page .site-header:not(.is-scrolled) { border-bottom-color: rgba(244, 244, 242, 0.7); }
 
-/* Left side of the header: Alfie Brown | The Box */
+/* Right side of the header: About  Work  Contact | The Box */
+.site-header-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 720px) {
+  .site-header-right { gap: 1rem; }
+  .site-header-right .site-header-divider { display: none; }
+}
+
+/* Left side of the header: logo and name */
 .site-header-left {
   display: flex;
   align-items: center;

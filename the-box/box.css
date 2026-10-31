@@ -59,7 +59,8 @@ a { color: inherit; text-decoration: none; }
   -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
-.site-header-nav a { color: var(--ink-body); }
+.site-header-nav a,
+.site-header-box { color: var(--ink-body); }
 
 .site-header-nav a:hover,
 .site-header-nav a:focus-visible,

@@ -40,6 +40,7 @@
 .instagram-link,
 .linkedin-link,
 .behance-link,
+.pinterest-link,
 .footer-cv {
   display: inline-flex;
   align-items: center;
@@ -51,6 +52,7 @@
 
 .instagram-link svg,
 .linkedin-link svg,
+.pinterest-link svg,
 .behance-link img {
   width: 25px;
   height: 25px;
@@ -72,16 +74,21 @@
 .linkedin-link:hover,
 .linkedin-link:focus-visible { color: #0A66C2; }
 
-/* CV: plain text, no underline, turns black on hover */
-.footer-cv {
+.pinterest-link:hover,
+.pinterest-link:focus-visible { color: #E60023; }
+
+/* CV: plain orange text, no underline; turns white on hover.
+   (.site-footer prefix so it beats the footer's general link colour) */
+.site-footer .footer-cv {
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.footer-cv:hover,
-.footer-cv:focus-visible { color: var(--bg-page); }
+.site-footer .footer-cv:hover,
+.site-footer .footer-cv:focus-visible { color: var(--ink-strong); }
 
 .site-footer a:focus-visible {
   outline: 2px solid var(--ink-strong);

@@ -20,7 +20,7 @@
   }
 
   header.className = 'site-header';
-  header.innerHTML = `<div class="site-header-left"><a class="site-header-brand" href="/" aria-label="Back to home"><img class="site-header-logo" src="/assets/logos/a-logo.svg" alt="Alfie Brown logo"><span>Alfie Brown</span></a><span class="site-header-divider" aria-hidden="true">|</span><a class="site-header-box" href="/the-box/">The Box</a></div><nav class="site-header-nav" aria-label="Portfolio navigation"><a href="${aboutHref}">About</a><a href="/#work">Work</a><a href="${contactHref}">Contact</a></nav><button class="site-header-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel"><span></span><span></span><span></span></button>`;
+  header.innerHTML = `<div class="site-header-left"><a class="site-header-brand" href="/" aria-label="Back to home"><img class="site-header-logo" src="/assets/logos/a-logo.svg" alt="Alfie Brown logo"><span>Alfie Brown</span></a></div><div class="site-header-right"><nav class="site-header-nav" aria-label="Portfolio navigation"><a href="${aboutHref}">About</a><a href="/#work">Work</a><a href="${contactHref}">Contact</a></nav><span class="site-header-divider" aria-hidden="true">|</span><a class="site-header-box" href="/the-box/">The Box</a><button class="site-header-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel"><span></span><span></span><span></span></button></div>`;
 
   let panel = document.querySelector('.site-header-menu-panel');
   if (!panel) {
