@@ -92,6 +92,37 @@ body.has-site-header { padding-top: 80px; }
 .site-header-nav a[aria-current],
 .site-header-menu-links a[aria-current] { color: var(--accent-text); }
 
-/* Thin white line under the header while you're at the top of the page;
+/* The Box pages only: thin white line under the header while you're at the top of the page;
    once you scroll it drops back to the subtle grey rule */
-.site-header:not(.is-scrolled) { border-bottom-color: rgba(244, 244, 242, 0.7); }
+.box-page .site-header:not(.is-scrolled) { border-bottom-color: rgba(244, 244, 242, 0.7); }
+
+/* Left side of the header: Alfie Brown | The Box */
+.site-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.site-header-divider {
+  color: var(--ink-muted);
+  font: 400 0.95rem var(--font-sans);
+  line-height: 1;
+}
+
+.site-header-box {
+  font: 0.75rem var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-header-box:hover,
+.site-header-box:focus-visible { color: var(--accent-text); }
+
+.site-header-box[aria-current] {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
