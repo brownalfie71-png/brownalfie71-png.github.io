@@ -77,10 +77,10 @@
 .pinterest-link:hover,
 .pinterest-link:focus-visible { color: #E60023; }
 
-/* CV: plain orange text, no underline; turns white on hover.
+/* CV: plain white text, no underline; turns brand orange on hover.
    (.site-footer prefix so it beats the footer's general link colour) */
 .site-footer .footer-cv {
-  color: var(--accent);
+  color: var(--ink-strong);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -88,7 +88,7 @@
 }
 
 .site-footer .footer-cv:hover,
-.site-footer .footer-cv:focus-visible { color: var(--ink-strong); }
+.site-footer .footer-cv:focus-visible { color: var(--accent); }
 
 .site-footer a:focus-visible {
   outline: 2px solid var(--ink-strong);
