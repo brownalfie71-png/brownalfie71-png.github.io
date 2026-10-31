@@ -35,6 +35,24 @@
     }
   });
 
+  // ---- Category filters on The Box page (View all / Design / Product / Event)
+  const filterButtons = [...document.querySelectorAll('.box-filters [data-filter]')];
+  if (filterButtons.length) {
+    const posts = [...document.querySelectorAll('.post-list .post-item')];
+    const emptyNote = document.querySelector('.box-filter-empty');
+    const applyFilter = (category) => {
+      let shown = 0;
+      posts.forEach((post) => {
+        const match = category === 'all' || post.dataset.category === category;
+        post.hidden = !match;
+        if (match) shown += 1;
+      });
+      filterButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
+      if (emptyNote) emptyNote.hidden = shown > 0;
+    };
+    filterButtons.forEach((button) => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
+  }
+
   // ---- Comment counts (approved comments only)
   const countIds = [...new Set([...document.querySelectorAll('[data-comments]')].map((el) => el.dataset.comments))];
   if (countIds.length && !COMMENTS_API) {

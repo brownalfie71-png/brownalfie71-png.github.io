@@ -559,3 +559,147 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 700px) {
   .post-section p { font-size: 1rem; }
 }
+
+/* ---------- The Box landing page (matches Alfie's mockup) ---------- */
+.box-hero {
+  padding-top: calc(var(--header-h) + 95px);
+  padding-bottom: 0;
+}
+
+.box-hero .blog-hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px 48px;
+  width: min(1100px, calc(100% - 48px));
+}
+
+.box-hero h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 8.6vw, 7.25rem);
+}
+
+.box-hero p {
+  flex: 0 1 390px;
+  max-width: 390px;
+  color: var(--ink-strong);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1;
+  text-wrap: wrap; /* break lines exactly like the mockup */
+}
+
+.box-posts {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 0 0 32px;
+}
+
+/* Category filters */
+.box-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 45px;
+  margin: 97px 0 58px;
+}
+
+.box-filters button {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-strong);
+  font: 700 1.1875rem/1 var(--font-sans);
+  cursor: pointer;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.box-filters button:hover,
+.box-filters button:focus-visible { color: var(--accent-text); }
+
+.box-filters button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.box-filters button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.box-filter-empty {
+  color: var(--ink-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+}
+
+/* One post per row: picture left, words right */
+.box-posts .post-list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 72px;
+}
+
+.box-posts .post-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.17fr) minmax(0, 1fr);
+  column-gap: 46px;
+  align-items: start;
+}
+
+.box-posts .post-item[hidden] { display: none; }
+
+.box-posts .post-thumb { border-radius: 20px; }
+
+.box-posts .post-meta {
+  gap: 14px;
+  padding: 0;
+}
+
+.box-posts .post-meta h3 {
+  color: var(--accent);
+  font-size: 3.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-wrap: wrap;
+}
+
+.box-posts .post-meta h3 a {
+  background: none;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.12em;
+}
+
+.box-posts .post-item:hover .post-meta h3 a,
+.box-posts .post-meta h3 a:focus-visible { color: var(--ink-strong); }
+
+.box-posts .post-stats {
+  margin-top: -6px;
+  gap: 8px 16px;
+  font-size: 0.75rem;
+}
+
+.box-posts .post-stats li { gap: 6px; }
+.box-posts .post-stats svg { width: 14px; height: 14px; }
+
+@media (max-width: 900px) {
+  .box-hero .blog-hero__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box-hero p { flex: none; }
+
+  .box-filters { margin: 48px 0 36px; gap: 4px 28px; }
+
+  .box-posts .post-item {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
+  }
+
+  .box-posts .post-meta h3 { font-size: clamp(2rem, 8vw, 3.5rem); }
+}

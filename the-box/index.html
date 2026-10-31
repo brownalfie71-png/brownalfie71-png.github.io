@@ -54,20 +54,26 @@
     </div>
 
     <main>
-      <section class="blog-hero blog-hero--plain" aria-labelledby="blog-title">
+      <section class="blog-hero blog-hero--plain box-hero" aria-labelledby="blog-title">
         <div class="blog-hero__inner">
           <h1 id="blog-title">The Box</h1>
-          <p>My place to talk about design that pulls me in.</p>
+          <p>Welcome to The Box Blog my place to share my thoughts on design that pulls me in.</p>
         </div>
       </section>
 
-      <section class="posts" aria-labelledby="posts-title">
+      <section class="posts box-posts" aria-labelledby="posts-title">
         <h2 class="visually-hidden" id="posts-title">Posts</h2>
+        <div class="box-filters" role="group" aria-label="Show posts by category">
+          <button type="button" data-filter="all" aria-pressed="true">View all</button>
+          <button type="button" data-filter="design" aria-pressed="false">Design</button>
+          <button type="button" data-filter="product" aria-pressed="false">Product</button>
+          <button type="button" data-filter="event" aria-pressed="false">Event</button>
+        </div>
 
         <!--
           Posts go in .post-list, newest first. Copy this block for each one:
 
-          <article class="post-item">
+          <article class="post-item" data-category="design">  (design, product or event)
             <div class="post-thumb"><img src="/assets/images/the-box/POST-IMAGE.webp" alt="DESCRIBE THE IMAGE" loading="lazy"></div>
             <div class="post-meta">
               <h3><a href="/the-box/POST-SLUG">Post title</a></h3>
@@ -80,7 +86,7 @@
           No photo yet? Use <div class="post-thumb post-thumb--type" aria-hidden="true"><span>Short title</span></div> instead.
         -->
         <div class="post-list">
-          <article class="post-item">
+          <article class="post-item" data-category="product">
             <div class="post-thumb"><img src="/assets/images/the-box/power-box-kit.webp" width="720" height="540" alt="The Energy Makers Academy kit: a purple Power Box with a yellow dial and handle, a small solar panel, a bulb, a multimeter, soldering tools, wires and a breadboard, in front of the purple and lilac kit box" loading="lazy"></div>
             <div class="post-meta">
               <h3><a href="/the-box/power-box-design-for-autonomy">Power Box: Design for Autonomy</a></h3>
@@ -93,6 +99,7 @@
             </div>
           </article>
         </div>
+        <p class="box-filter-empty" hidden>No posts here yet. Check back soon.</p>
       </section>
     </main>
 
